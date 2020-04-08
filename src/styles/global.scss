@@ -17,6 +17,7 @@ body {
   --margin-left-back: 1rem;
   --height-card-image: 150px;
   --padding-v-content: 12px;
+  --max-width-site-title: 10rem;
 }
 @media only screen and (min-width: 768px) {
   body {
@@ -31,6 +32,7 @@ body {
     --margin-left-back: 0;
     --height-card-image: 330px;
     --padding-v-content: 24px;
+    --max-width-site-title: 30rem;
   }
 }
 
@@ -119,13 +121,10 @@ a {
     }
   }
 }
-// @media only screen and (min-width: 768px) {
-//   .hero-header {
-//     height: 600px;
-//     background-position: top center; 
-//   }
-// }
 
+.site-title {
+  max-width: var(--max-width-site-title);
+}
 .site-title a {
   font-size: var(--font-size-site-title);
   line-height: var(--line-height-site-title);
