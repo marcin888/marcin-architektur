@@ -1,9 +1,9 @@
 ---
 template: BlogPost
-path: /hello-world
-date: 2020-02-20T07:08:53.137Z
-title: Hello World
-thumbnail: ''
+path: /bürohaus-a1
+date: 2020-02-20T15:05:49.332Z
+title: Bürohaus A1
+thumbnail: /assets/bürohaus-a1.jpg
 metaDescription: Meta description for Hello World
 ---
 
