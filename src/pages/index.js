@@ -17,18 +17,19 @@ const IndexPage = ({
     .map(edge => <PostLink key={edge.node.id} post={edge.node} />)
 
   return (
+    <>
+    <HeroHeader/>    
     <Layout>
       <Helmet>
         <title>{site.siteMetadata.title}</title>
         <meta name="description" content={site.siteMetadata.description} />
         {!site.siteMetadata.w3l_dom_key ? null : <meta name="w3l-domain-verification" content={site.siteMetadata.w3l_dom_key} />}
       </Helmet>
-      <HeroHeader/>
-      <h2>Blog Posts &darr;</h2>
       <div className="grids">
         {Posts}
       </div>
     </Layout>
+    </>
   )
 }
 
