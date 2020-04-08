@@ -1,6 +1,6 @@
 import React from "react"
 import Helmet from 'react-helmet';
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 import Layout from "../components/layout"
 
 export default function Template({
@@ -14,19 +14,24 @@ export default function Template({
         <title>{frontmatter.title}</title>
         <meta name="description" content={frontmatter.metaDescription} />
       </Helmet>
+      <div className="mbs">
+        <Link to="/" className="back">&larr; Zurück</Link>
+      </div>
       <div className="blog-post-container">
         <article className="post">
           
           {!frontmatter.thumbnail && (
-            <div className="post-thumbnail">
+            <div className="post-thumbnail appear">
               <h1 className="post-title">{frontmatter.title}</h1>
               <div className="post-meta">{frontmatter.date}</div>
+              <div className="post-meta">{frontmatter.location}</div>
             </div>
           )}
           {!!frontmatter.thumbnail && (
-            <div className="post-thumbnail" style={{backgroundImage: `url(${frontmatter.thumbnail})`}}>
+            <div className="post-thumbnail appear" style={{backgroundImage: `url(${frontmatter.thumbnail})`}}>
               <h1 className="post-title">{frontmatter.title}</h1>
               <div className="post-meta">{frontmatter.date}</div>
+              <div className="post-meta">{frontmatter.location}</div>
             </div>
           )}
           <div
