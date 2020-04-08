@@ -17,7 +17,7 @@ const ContactPage = ({ data: { site } }) => {
             alt="/assets/marcin-szumilas.jpg"
           />
         </div>
-        <div>
+        <div className="phs">
           <div className="mbm">
             <h2>Kontakt</h2>
             <p>

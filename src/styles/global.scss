@@ -6,7 +6,30 @@ html,
 body {
   margin: 0;
   padding: 0;
+  --hero-height: 300px;
+  --padding-header-h: 6px;
+  --padding-header-v: 10px;
+  --margin-top-content: 40px;
+  --font-size-site-title: 0.7rem;
+  --line-height-site-title: 10px;
+  --margin-navigation: 14px;
+  --padding-card-header: 4px 20px 10px 10px;
+  --margin-left-back: 1rem;
 }
+@media only screen and (min-width: 768px) {
+  body {
+    --hero-height: 600px;
+    --padding-header-h: 40px;
+    --padding-header-v: 20px;
+    --margin-top-content: 100px;
+    --font-size-site-title: 1rem;
+    --line-height-site-title: default;
+    --margin-navigation: 28px;
+    --padding-card-header: 12px 20px 20px 20px;
+    --margin-left-back: 0;
+  }
+}
+
 * {
   margin-top: 0;
 }
@@ -15,7 +38,6 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   background-color: #fff;
-  //background-color: #fff;
 }
 a {
   color: $primary-color;
@@ -30,10 +52,10 @@ a {
   }
 }
 .content {
-  padding: 32px 0;
+  padding: 24px 0;
   max-width: 1240px;
   margin: 0 auto;  
-  margin-top: 120px;
+  margin-top: var(--margin-top-content);
 }
 .mbs {
   margin-bottom: 1rem; 
@@ -41,8 +63,12 @@ a {
 .mbm {
   margin-bottom: 3rem; 
 }
+.phs {
+  padding: 0 1rem; 
+}
 .back {
   font-weight: 900;
+  margin-left: var(--margin-left-back);
   text-transform: uppercase;
   letter-spacing: 1px;
   font-size: 0.9rem;
@@ -53,14 +79,10 @@ a {
   }
 }
 .navigation {
-  font-weight: 900;
-  text-transform: uppercase;
-  letter-spacing: 1px;
   a {
-    margin: 0 14px 0;
+    margin: 0 var(--margin-navigation) 0 0;
     &[aria-current] {
       color: $primary-color;
-      font-weight: 900;
     }
     &:hover {
       color: $primary-color;
@@ -71,16 +93,18 @@ a {
   }
 }
 .site-header {
+  letter-spacing: 1px;
+  font-weight: 900;
+  text-transform: uppercase;  
   position: absolute;
   z-index: 1000;
   left: 0;
   top: 0;
-  --padding-h: 40px;
-  width: calc(100vw - 2*var(--padding-h));
-  padding: 20px var(--padding-h);
+  width: calc(100vw - 2*var(--padding-header-h));
+  padding: var(--padding-header-v) var(--padding-header-h);
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: top;
   .navigation {
     a {
       border-bottom: solid 1px transparent;
@@ -91,12 +115,19 @@ a {
     }
   }
 }
+// @media only screen and (min-width: 768px) {
+//   .hero-header {
+//     height: 600px;
+//     background-position: top center; 
+//   }
+// }
+
 .site-title a {
+  font-size: var(--font-size-site-title);
+  line-height: var(--line-height-site-title);
+  display: block;
   color: $primary-color;
-  letter-spacing: 1px;
-  text-decoration: none;
-  font-weight: 900;
-  text-transform: uppercase;
+  text-decoration: none;  
   border-bottom: solid 1px transparent;
   transition: border-color 0.15s ease-out;
   &:hover {
@@ -106,13 +137,16 @@ a {
 .hero-header {
   padding: 0;
   width: 100%;
-  height: 600px;
+  height: 300px;
+  height: var(--hero-height);
+  background-position: top center; 
   background-image: url("../../static/assets/cover-moshed.jpg");
   background-size: cover;
-  background-position: top center; 
   background-repeat: no-repeat;
   animation: appear 0.8s linear;
 }
+
+
 .headline {
   font-size: 36px;
   font-weight: 900;
@@ -236,7 +270,7 @@ a {
     }
   }
   > header {
-    padding: 24px;
+    padding: var(--padding-card-header);
   }
   > h2:first-child {
     margin: 0 0 0.5rem 0;
