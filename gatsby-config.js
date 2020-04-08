@@ -7,8 +7,8 @@
 module.exports = {
   /* Your site config here */
   siteMetadata: {
-    title: `Delog`,
-    description: `A starter blog demonstrating what Gatsby can do.`,
+    title: `Szumilas Architektur`,
+    description: `Szumilas Architektur.`,
     siteUrl: `https://delog-w3layouts.netlify.com/`,
     home: {
       title: `Hi! I'm Delog`,
