@@ -12,7 +12,7 @@ body {
   --margin-top-content: 40px;
   --font-size-site-title: 0.78rem;
   --line-height-site-title: 12px;
-  --margin-navigation: 14px;
+  --margin-navigation: 10px;
   --padding-card-header: 4px 20px 10px 10px;
   --margin-left-back: 1rem;
   --height-card-image: 150px;
@@ -108,7 +108,7 @@ a {
   padding: var(--padding-header-v) var(--padding-header-h);
   display: flex;
   justify-content: space-between;
-  align-items: top;
+  align-items: flex-start;
   .navigation {
     a {
       border-bottom: solid 1px transparent;
