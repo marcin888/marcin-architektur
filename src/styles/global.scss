@@ -1,5 +1,6 @@
-$primary-color: #381696;
+$primary-color: black;
 $primary-text-color: #fff;
+$link-color: #2c6cff;
 
 html,
 body {
@@ -7,39 +8,59 @@ body {
   padding: 0;
 }
 * {
-  margin-top: 0
+  margin-top: 0;
 }
 /* System Fonts as used by Medium and WordPress */
 body {
-  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   background-color: #fff;
   //background-color: #fff;
-  border-top: 10px solid $primary-color;
 }
 a {
   color: $primary-color;
   text-decoration: none;
-  &:hover {
-    text-decoration: underline;
-  }
+  border-bottom: solid 1px transparent;
+  transition: border-color 0.15s ease-out;
 }
 .site-wrapper {
-  padding: 32px;
-  max-width: 1140px;
   margin: 0 auto;
   img {
     max-width: 100%;
   }
 }
+.content {
+  padding: 32px 0;
+  max-width: 1240px;
+  margin: 0 auto;  
+  margin-top: 120px;
+}
+.mbs {
+  margin-bottom: 1rem; 
+}
+.mbm {
+  margin-bottom: 3rem; 
+}
+.back {
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.9rem;
+  border-bottom: solid 1px transparent;
+  transition: border-color 0.15s ease-out;
+  &:hover {
+    border-bottom: solid 1px $primary-color;
+  }
+}
 .navigation {
-  font-weight: 300;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 1px;
   a {
-    color: #888;
-    text-decoration: none;
-    margin: 0 8px 0;
+    margin: 0 14px 0;
     &[aria-current] {
       color: $primary-color;
-      font-weight: 700;
+      font-weight: 900;
     }
     &:hover {
       color: $primary-color;
@@ -50,22 +71,47 @@ a {
   }
 }
 .site-header {
+  position: absolute;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  --padding-h: 40px;
+  width: calc(100vw - 2*var(--padding-h));
+  padding: 20px var(--padding-h);
   display: flex;
   justify-content: space-between;
-  padding: 20px 0;
-  background: white;
-  margin-bottom: 32px;
   align-items: center;
+  .navigation {
+    a {
+      border-bottom: solid 1px transparent;
+      transition: border-color 0.15s ease-out;
+      &:hover {
+        border-bottom: solid 1px $primary-color;
+      }
+    }
+  }
 }
 .site-title a {
   color: $primary-color;
+  letter-spacing: 1px;
   text-decoration: none;
   font-weight: 900;
   text-transform: uppercase;
+  border-bottom: solid 1px transparent;
+  transition: border-color 0.15s ease-out;
+  &:hover {
+    border-bottom: solid 1px $primary-color;
+  }
 }
 .hero-header {
-  padding: 0 0 64px;
-  max-width: 980px;
+  padding: 0;
+  width: 100%;
+  height: 600px;
+  background-image: url("../../static/assets/cover-moshed.jpg");
+  background-size: cover;
+  background-position: top center; 
+  background-repeat: no-repeat;
+  animation: appear 0.8s linear;
 }
 .headline {
   font-size: 36px;
@@ -75,15 +121,15 @@ a {
 .button {
   padding: 18px 27px;
   display: inline-block;
-  background:#fff;
+  background: #fff;
   border: 1px solid #d3d6e7;
   border-radius: 9px;
   text-decoration: none;
-  color:#868892;
+  color: #868892;
   font-size: 16px;
   font-weight: 400;
   margin: 0 20px 0 0;
-  transition: background-color .3s linear;
+  transition: background-color 0.3s linear;
   &.-primary {
     background-color: $primary-color;
     border-color: $primary-color;
@@ -107,11 +153,12 @@ a {
 }
 .post {
   padding: 0;
-  background:white;
+  background: white;
   line-height: 1.5;
   > .blog-post-content {
     max-width: 768px;
     margin: 0 auto;
+    padding: 0 12px;
   }
   > .blog-post-content *:last-child,
   > *:last-child {
@@ -121,13 +168,15 @@ a {
     text-align: center;
     margin: 0 0 0.5rem;
     line-height: 1.3;
-    font-size: 2rem;
+    font-size: 1.9rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: 900;
   }
   .post-meta {
     margin-bottom: 32px;
     text-align: center;
   }
-  
 }
 .post-thumbnail {
   text-align: center;
@@ -137,7 +186,6 @@ a {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  border-radius: 18px;
   margin-bottom: 36px;
   color: white;
   display: grid;
@@ -147,7 +195,7 @@ a {
   overflow: hidden;
   &:before {
     content: "";
-    background: rgba(0,0,0,0.4);
+    background: rgba(0, 0, 0, 0.5);
     position: absolute;
     top: 0;
     left: 0;
@@ -160,29 +208,32 @@ a {
     z-index: 2;
   }
   .post-meta {
-    color: rgba(255,255,255,0.8);
+    color: rgba(255, 255, 255, 0.8);
     margin-bottom: 0;
   }
 }
 .grids {
   display: grid;
   grid-template-columns: 1fr;
-  grid-gap: 32px;
-  margin-top: 32px;
+  grid-gap: 64px;
 }
 .card {
   display: grid;
-  background:white;
-  border-radius: 9px;
-  border: 1px solid #eee;
-  box-shadow: 0 0 30px #d5d5d5;
+  background: white;
+  box-shadow: 0 0 30px #c7c7c7;
   overflow: hidden;
   line-height: 1.5;
+  > a img {
+    display: block;
+    transition: filter 0.2s ease-out;
+  }
   &:hover .post-link {
     color: $primary-color;
   }
-  > a img {
-    display: block;
+  &:hover {
+    > a img {
+      filter: brightness(0.8);
+    }
   }
   > header {
     padding: 24px;
@@ -191,16 +242,18 @@ a {
     margin: 0 0 0.5rem 0;
   }
   .post-title {
-    font-size: 1.2rem;
-    margin-bottom: 0.3rem;
+    margin-bottom: 0;
   }
   .post-meta {
-    font-weight: 100;
     margin-bottom: 0;
   }
   .post-link {
     color: #333;
     text-decoration: none;
+    font-weight: 900;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
   }
 }
 .post-meta {
@@ -210,6 +263,7 @@ a {
 .site-footer {
   text-align: center;
   margin: 90px 0 16px;
+  font-size: 0.6rem;
   color: #666;
   a {
     font-weight: 700;
@@ -224,8 +278,8 @@ a {
     display: block;
     margin-bottom: 0.5rem;
   }
-  input[type=text],
-  input[type=email],
+  input[type="text"],
+  input[type="email"],
   textarea {
     appearance: none;
     border: 1px solid #d3d6e7;
@@ -250,14 +304,12 @@ a {
   }
 }
 /* Portrait and Landscape */
-@media only screen 
-and (min-width: 768px) {
-.grids {
-  grid-template-columns: 1fr 1fr;
+@media only screen and (min-width: 768px) {
+  .grids {
+    grid-template-columns: 1fr 1fr;
+  }
 }
-}
-@media only screen 
-  and (min-width: 1024px) {
+@media only screen and (min-width: 1024px) {
   .grids {
     grid-template-columns: 1fr 1fr 1fr;
   }
@@ -266,4 +318,36 @@ and (min-width: 768px) {
     grid-template-columns: 1fr 1fr;
     grid-gap: 64px;
   }
+}
+
+.appear {
+  animation: appear 0.8s cubic-bezier(0.39, 1.07, 0.87, 0.99);
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+a.select {
+  user-select: all;
+  cursor: pointer;
+}
+
+.select {
+  user-select: all;
+  cursor: default;
+}
+
+.clickable {
+  color: $link-color;
+}
+
+p {
+  line-height: 1.3rem;
+  letter-spacing: 0.02rem;
 }
