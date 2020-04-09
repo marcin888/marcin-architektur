@@ -1,39 +1,43 @@
-import React from "react"
-import Helmet from 'react-helmet';
-import { graphql } from 'gatsby'
-import Layout from "../components/layout"
-import PostLink from "../components/post-link"
-import HeroHeader from "../components/heroHeader"
+import React from "react";
+import Helmet from "react-helmet";
+import { graphql } from "gatsby";
+import Layout from "../components/layout";
+import PostLink from "../components/post-link";
+import HeroHeader from "../components/heroHeader";
 
 const IndexPage = ({
   data: {
     site,
-    allMarkdownRemark: { edges },
-  },
+    allMarkdownRemark: { edges }
+  }
 }) => {
-
   const Posts = edges
     .filter(edge => !!edge.node.frontmatter.date) // You can filter your posts based on some criteria
-    .map(edge => <PostLink key={edge.node.id} post={edge.node} />)
+    .map(edge => <PostLink key={edge.node.id} post={edge.node} />);
 
   return (
     <>
-    <HeroHeader/>    
-    <Layout>
-      <Helmet>
-        <title>{site.siteMetadata.title}</title>
-        <meta name="description" content={site.siteMetadata.description} />
-        {!site.siteMetadata.w3l_dom_key ? null : <meta name="w3l-domain-verification" content={site.siteMetadata.w3l_dom_key} />}
-      </Helmet>
-      <div className="grids">
-        {Posts}
-      </div>
-    </Layout>
+      <Layout>
+        <HeroHeader />
+        <div className="content">
+          <Helmet>
+            <title>{site.siteMetadata.title}</title>
+            <meta name="description" content={site.siteMetadata.description} />
+            {!site.siteMetadata.w3l_dom_key ? null : (
+              <meta
+                name="w3l-domain-verification"
+                content={site.siteMetadata.w3l_dom_key}
+              />
+            )}
+          </Helmet>
+          <div className="grids">{Posts}</div>
+        </div>
+      </Layout>
     </>
-  )
-}
+  );
+};
 
-export default IndexPage
+export default IndexPage;
 export const pageQuery = graphql`
   query indexPageQuery {
     site {
@@ -58,4 +62,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;

@@ -20,16 +20,21 @@ export default ({ children }) => {
       <header className="site-header">
         <div className="site-title">
           <Link to="/">
-            {data.site.siteMetadata.title}
+            <div className="logo-image-wrapper">
+              <img
+                src="/assets/logo.png"
+                alt={data.site.siteMetadata.title}
+              />
+            </div>
           </Link>
         </div>
         <Navigation />
       </header>
-      <div className="content">
-        {children}
-      </div>
+      {children}
       <footer className="site-footer">
-        <p>&copy; 2020 &bull; Szumilas Architektur</p>
+        <p>
+        {data.site.siteMetadata.title} &copy; 2020 &bull; <a className="clickable" href="mailto:szumilas@web.de">szumilas@web.de</a>
+        </p>
       </footer>
     </div>
   )
