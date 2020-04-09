@@ -33,7 +33,7 @@ export default ({ children }) => {
       {children}
       <footer className="site-footer">
         <p>
-        {data.site.siteMetadata.title} &copy; 2020 &bull; <a className="clickable" href="mailto:szumilas@web.de">szumilas@web.de</a>
+        {data.site.siteMetadata.title} &copy; 2020 &bull; <a className="clickable" href="mailto:szumilas@architekturs.de">szumilas@architekturs.de</a>
         </p>
       </footer>
     </div>

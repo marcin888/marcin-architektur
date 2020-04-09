@@ -8,7 +8,7 @@ body {
   padding: 0;
   --height-hero: 300px;
   --padding-header-h: 6px;
-  --padding-header-v: 10px;
+  --padding-header-v: 6px;
   --margin-top-content: 40px;
   --font-size-site-title: 0.78rem;
   --line-height-site-title: 12px;
@@ -18,7 +18,7 @@ body {
   --height-card-image: 150px;
   --padding-v-content: 12px;
   --max-width-site-title: 10rem;
-  --height-logo: 30px;
+  --height-logo: 40px;
 }
 @media only screen and (min-width: 768px) {
   body {
@@ -176,6 +176,7 @@ display: flex;
   padding: 0;
   outline: none;
   margin: 0;
+  background: none;
   cursor: pointer;
   @include bigText;
   color: $link-color;

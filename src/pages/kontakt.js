@@ -27,7 +27,7 @@ const ContactPage = ({ data: { site } }) => {
                 </a>
               </p>
               <p>
-                <a className="clickable" href="mailto:szumilas@web.de">szumilas@web.de</a>  
+                <a className="clickable" href="mailto:szumilas@architekturs.de">szumilas@architekturs.de</a>  
               </p>
               <p>
                 LinkedIn:{" "}
