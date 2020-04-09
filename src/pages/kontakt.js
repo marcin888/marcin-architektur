@@ -6,48 +6,52 @@ import Layout from "../components/layout";
 const ContactPage = ({ data: { site } }) => {
   return (
     <Layout>
-      <Helmet>
-        <title>Kontakt — {site.siteMetadata.title}</title>
-        <meta name="description" content={site.siteMetadata.description} />
-      </Helmet>
-      <div className="two-grids -contact">
-        <div className="appear">
-          <img
-            src="/assets/marcin-szumilas.jpg"
-            alt="/assets/marcin-szumilas.jpg"
-          />
-        </div>
-        <div className="phs">
-          <div className="mbm">
-            <h2>Kontakt</h2>
-            <p>
-              <a className="select clickable" href="tel:+491799427991">
-                (+49) (0)179 94 279 91
-              </a>
-            </p>
-            <p className="select clickable">szumilas@web.de</p>
-            <p>
-              LinkedIn:{" "}
-              <a
-                href="https://www.linkedin.com/in/marcin-lukasz-szumilas-21ab42b2/"
-                className="select clickable"
-              >
-                Marcin Szumilas
-              </a>
-            </p>
+      <div className="content">
+        <Helmet>
+          <title>Kontakt — {site.siteMetadata.title}</title>
+          <meta name="description" content={site.siteMetadata.description} />
+        </Helmet>
+        <div className="two-grids -contact">
+          <div className="appear">
+            <img
+              src="/assets/marcin-szumilas.jpg"
+              alt="/assets/marcin-szumilas.jpg"
+            />
           </div>
-          <h2>Über mich</h2>
-          <p>
-            Ich studierte Architektur in Berlin an der Universität der Künste
-            und Politecnico di Milano.
-          </p>
-          <p>
-            Meine berufliche Laufbahn als Architekt begann 2011 bei Specht
-            Kalleja + Partner Architekten GmbH und Baumschlager Eberle
-            Architekten Berlin. Derzeit bin ich als Architekt bei Gewers
-            Pudewill Architekten tätig.
-          </p>
-          <p>Ich bin ein Mitglied der Architektenkammer Berlin.</p>
+          <div className="phs">
+            <div className="mbm">
+              <h2>Kontakt</h2>
+              <p>
+                <a className="select clickable" href="tel:+491799427991">
+                  (+49) (0)179 94 279 91
+                </a>
+              </p>
+              <p>
+                <a className="clickable" href="mailto:szumilas@architekturs.de">szumilas@architekturs.de</a>  
+              </p>
+              <p>
+                LinkedIn:{" "}
+                <a
+                  href="https://www.linkedin.com/in/marcin-lukasz-szumilas-21ab42b2/"
+                  className="select clickable"
+                >
+                  Marcin Szumilas
+                </a>
+              </p>
+            </div>
+            <h2>Über mich</h2>
+            <p>
+              Ich studierte Architektur in Berlin an der Universität der Künste
+              und Politecnico di Milano.
+            </p>
+            <p>
+              Meine berufliche Laufbahn als Architekt begann 2011 bei Specht
+              Kalleja + Partner Architekten GmbH und Baumschlager Eberle
+              Architekten Berlin. Derzeit bin ich als Architekt bei Gewers
+              Pudewill Architekten tätig.
+            </p>
+            <p>Ich bin ein Mitglied der Architektenkammer Berlin.</p>
+          </div>
         </div>
       </div>
     </Layout>
