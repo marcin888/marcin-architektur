@@ -33,7 +33,7 @@ const ContactPage = ({ data: { site } }) => {
                 LinkedIn:{" "}
                 <a
                   href="https://www.linkedin.com/in/marcin-lukasz-szumilas-21ab42b2/"
-                  className="select clickable"
+                  className="select clickable" target="_blank" rel="noopener noreferrer"
                 >
                   Marcin Szumilas
                 </a>
