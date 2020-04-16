@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: maudnals/marcin-architektur
+  repo: marcin888/marcin-architektur
 media_folder: static/assets
 public_folder: /assets
 collections:
